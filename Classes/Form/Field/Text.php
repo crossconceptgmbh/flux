@@ -62,6 +62,12 @@ class Text extends Input implements FieldInterface
         } else {
             $configuration['defaultExtras'] = $defaultExtras;
         }
+
+        if (true === $this->getEnableRichText()) {
+            $configuration['enableRichtext'] = true;
+            $configuration['richtextConfiguration'] = 'default';
+        }
+
         $renderType = $this->getRenderType();
         if (false === empty($renderType)) {
             $configuration['renderType'] = $renderType;
